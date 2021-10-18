@@ -1,16 +1,12 @@
 // @ts-nocheck
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast",
+    "sap/ui/core/mvc/Controller"
 ],
     /**
      * 
      * @param {typeof sap.ui.core.mvc.Controller} Controller
-     * @param {typeof sap.m.MessageToast} MessageToast
-     * @param {typeof kfc.sapui5.model.Models} Models
-     * @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
      */
-    function (Controller, MessageToast, models, ResourceModel) {
+    function (Controller) {
         'use strict';
 
         return Controller.extend("kfc.sapui5.controller.App", {
@@ -19,14 +15,11 @@ sap.ui.define([
 
             },
 
-            onShowHello: function () {
-                //read text from i18n
-                var oBundle = this.getView().getModel("i18n").getResourceBundle();
-                //read property from data model
-                var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-                var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-                MessageToast.show(sMsg);
+            onOpenDialogHeader: function() {
+                this.getOwnerComponent().openHelloDialog();
             }
+
+            
         });
 
     });
