@@ -14,7 +14,8 @@
                     class="sapUiSmallMarginEnd"/>
                     </headerContent>
                     <content>
-                        <mvc:XMLView viewName="kfc.sapui5.view.HelloPanel" ></mvc:XMLView>
+                        <mvc:XMLView viewName="kfc.sapui5.view.HelloPanel" />
+                        <mvc:XMLView viewName="kfc.sapui5.view.InvoicesList" />
                     </content>
                 </Page>
             </pages>
