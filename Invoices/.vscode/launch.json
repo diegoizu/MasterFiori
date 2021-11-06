@@ -8,30 +8,29 @@
   ],
   "configurations": [
     {
-      "name": "sapui5 - Run Configuration",
+      "name": "Run sapui5",
       "cwd": "${workspaceFolder}/sapui5",
       "runtimeArgs": [
-        "run-script",
-        "start"
+        "fiori",
+        "run"
       ],
       "type": "node",
       "request": "launch",
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "npx",
       "args": [
-        "--",
-        "--ui5"
+        "--open",
+        "index.html"
       ],
       "windows": {
-        "runtimeExecutable": "npm.cmd",
-        "args": [
-          "--",
-          "--ui5"
-        ]
+        "runtimeExecutable": "npx.cmd"
       },
       "console": "internalConsole",
       "internalConsoleOptions": "openOnSessionStart",
       "env": {
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/sapui5\"}"
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/sapui5\"}",
+        "FIORI_TOOLS_UI5_VERSION": "",
+        "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/V2\",\"destination\":\"Northwind\"}]"
       }
     }
   ],
