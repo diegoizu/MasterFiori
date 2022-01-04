@@ -18,6 +18,7 @@ sap.ui.define([
         return Controller.extend("kfc.sapui5.controller.Details", {
 
             _onObjectMatch: function(oEvent) {
+                this.byId("rating").reset();
                 this.getView().bindElement({
                     path: "/" +window.decodeURIComponent(oEvent.getParameter("arguments").invoicePath),
                     model: "northwind"
@@ -41,6 +42,13 @@ sap.ui.define([
                 }
                 
 
+            },
+
+            onRatingChange: function(oEvent) {
+                const fValue = oEvent.getParameter("value");
+                const oResourceBundle = this.getView().getModel("i18n").getResourceBundle();
+
+                sap.m.MessageToast.show(oResourceBundle.getText("ratingConfirmation", [fValue]));
             }
 
             
